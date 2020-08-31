@@ -1,0 +1,21 @@
+/* DATA BARANG PAGE */
+
+.container-fluid .alert {
+    margin-top: 10px;
+    opacity: 1;
+}
+
+.cetak {
+    float: right;
+    margin-top: -50px;
+}
+
+.search {
+    float: right;
+    width: 40%;
+}
+
+.jml {}
+
+
+/* END DATA BARANG PAGE */
