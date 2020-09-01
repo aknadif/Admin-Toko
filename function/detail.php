@@ -1,11 +1,11 @@
 
 <?php  
+include '../functions.php';
  if(isset($_POST["barang_id"]))  
  {  
-      $output = '';  
-      $connect = mysqli_connect("localhost", "root", "", "toko");  
+      $output = '';   
       $query = "SELECT * FROM barang WHERE id = '".$_POST["barang_id"]."'";  
-      $result = mysqli_query($connect, $query);  
+      $result = mysqli_query($conn, $query);  
       $output .= '  
       <div class="table-responsive">  
            <table class="table table-bordered">';  

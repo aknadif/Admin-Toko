@@ -1,11 +1,9 @@
 <?php 
 
 require '../functions.php';
-$barang = query("SELECT * FROM barang");
- 
- $connect = mysqli_connect("localhost", "root", "", "toko");  
- $query = "SELECT * FROM barang";  
- $result = mysqli_query($connect, $query);  
+$barang = query("SELECT * FROM barang"); 
+$query = "SELECT * FROM barang";  
+$result = mysqli_query($conn, $query);  
 
 //  Konfigurasi Pagination
 // $jumlahDataPerHalaman = 3;

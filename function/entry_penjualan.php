@@ -26,15 +26,13 @@ function entry($data){
 
     $query = "INSERT INTO penjualan
             VALUES
-            ( NULL ,'$id', '$jumlah', '$total_harga', '$tanggal_terjual')
-            ";
-            
-    $query = "UPDATE barang SET sisa = $sisak WHERE id = '$id' ";
-
+            ( NULL ,'$id', '$jumlah', '$total_harga', '$tanggal_terjual');
+            ";            
+    $query .= "UPDATE barang SET sisa = $sisak WHERE id = '$id' ";
+    
 
 
 mysqli_multi_query($conn, $query);
-
 
  return mysqli_affected_rows($conn);   
 }

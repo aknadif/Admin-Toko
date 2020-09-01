@@ -3,7 +3,6 @@ session_start();
 if(!isset($_SESSION["login"])){
     header("Location: login/login.php");
     exit;
-
 }
 require 'functions.php';
 
@@ -44,7 +43,7 @@ require 'functions.php';
                 <a class="list-group-item list-group-item-action bg-light klik_menu" id="dashboard"><span class="glyphicon glyphicon-home"></span> Dashboard</a>
                 <a class="list-group-item list-group-item-action bg-light klik_menu" id = "data"><span class="glyphicon glyphicon-briefcase"></span> Data Barang</a>
                 <a class="list-group-item list-group-item-action bg-light klik_menu" id = "entry"><span class="glyphicon glyphicon-copy"></span> Entry Penjualan</a>
-                <a class="list-group-item list-group-item-action bg-light klik_menu" id = "profile">Profile</a>
+                <a class="list-group-item list-group-item-action bg-light klik_menu" id = "profile"><span class="glyphicon glyphicon-user"></span> Profile</a>
                 <a href="logout.php" class="list-group-item list-group-item-action bg-light">Logout</a>
             </div>
         </div>
@@ -61,14 +60,16 @@ require 'functions.php';
         </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <ul class="navbar-nav navbar-right ml-auto mt-2 mt-lg-0">
                         <li class="nav-item ">
-                            <a class="nav-link" href="#">Pesan <span class="sr-only">(current)</span></a>
-                        </li>
+                            <a class="nav-link" href="#"><span class="glyphicon glyphicon-envelope"></span> Pesan <span class="sr-only">(current)</span></a>
+                        </li>                   
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Hy, </a>
+                        <?php $login = mysqli_query($conn, "SELECT * FROM login"); 
+                            $row = mysqli_fetch_array($login);
+                        ?>
+                            <a class="nav-link" href="#">Hy, <?= $row['username']; ?></a>
                         </li>
-
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
